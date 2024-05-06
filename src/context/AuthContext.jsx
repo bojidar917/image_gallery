@@ -37,10 +37,12 @@ const AuthProvider = ({ children }) => {
             await createUserWithEmailAndPassword(auth, email, password);
             setLoading(false);
         } catch (error) {
+            // consider logging errors 
             setLoading(false);
             setError(error);
             throw error;
         }
+        // set loading into finally block
     };
 
     const loginUser = async (email, password) => {
@@ -53,6 +55,7 @@ const AuthProvider = ({ children }) => {
             setError(error);
             throw error;
         }
+        // set loading into finally block
     };
 
     const logOut = async () => {
@@ -65,6 +68,7 @@ const AuthProvider = ({ children }) => {
             setError(error);
             throw error;
         }
+        // set loading into finally block
     };
 
     useEffect(() => {

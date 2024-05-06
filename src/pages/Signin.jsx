@@ -19,6 +19,7 @@ export default function Signin() {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
+        // make sure e is defined and values exist
         const email = e.target.email.value;
         const password = e.target.password.value;
         loginUser(email, password)
@@ -55,7 +56,8 @@ export default function Signin() {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input name='password' type="text" placeholder='password' className='input input-bordered' />
+                                {/* should be password type */}
+                                <input name='password' type="text" placeholder='password' className='input input-bordered' /> 
                             </div>
                             <button className="btn btn-primary">SignIn</button>
                             <Link to="/signup" className="link mt-3 text-center">Create new account</Link>

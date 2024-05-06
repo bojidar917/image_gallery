@@ -27,12 +27,12 @@ export default function UseStorage() {
         const storageRef = ref(storage, `images/${fileId}.${formatFile}`);
         const uploadTask = uploadBytesResumable(storageRef, file); 
 
-        uploadTask.on('state_changed', (snapshot) => {
-            const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        uploadTask.on('state_changed', (snapshot) => { 
+            const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100; // also into own function
             setProgress(progress);
         }, (error) => {
             setError(error);
-            }, async () => {
+            }, async () => { // for readability into a separate function
                 const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
                 setUrl(downloadURL);
                 setProgress(progress);

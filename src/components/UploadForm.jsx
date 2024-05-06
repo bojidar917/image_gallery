@@ -7,6 +7,7 @@ export default function UploadForm() {
     const {startUpload, progress} = UseStorage();
     
     const handleFileChange = (e) => {
+        // make sure e.tartget.files exists like e?.target?.files
         if(e.target.files && e.target.files[0]){
             setSlectedFile(e.target.files[0]);
         }
@@ -18,6 +19,7 @@ export default function UploadForm() {
             //start uploading an image
             startUpload(selectedFile)
         }
+        // Do we always need to set this to null
         setSlectedFile(null);
         
     }
