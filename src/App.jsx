@@ -6,6 +6,7 @@ import Signin from './pages/Signin'
 import { AuthContext } from './context/AuthContext'
 import Protected from './pages/Protected'
 import AuthProvider from './context/AuthContext'
+// consider using linters to avoid importing unneeded variables
 
 function App() {
   const router = createBrowserRouter([

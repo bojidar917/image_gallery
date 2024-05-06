@@ -4,6 +4,7 @@ import UseFirestore from '../context/UseFirestore';
 export default function ImageGallery()
 {
     const {docs: images, isLoading} = UseFirestore('images');
+    // instead of logs - use logger like winston or similar or console.debug
     console.log(images);
 
     if(isLoading)

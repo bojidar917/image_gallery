@@ -20,6 +20,7 @@ export default function Signup() {
     }
   
     const handleFormSubmit = (e) => {
+      // make sure e is defined
       e.preventDefault();
       const email = e.target.email.value;
       const password = e.target.password.value;
@@ -58,7 +59,8 @@ export default function Signup() {
                                 </label>
                                 <input name='password' type="text" placeholder='password' className='input input-bordered' />
                             </div>
-                            <button className="btn btn-primary">SignUp</button>
+                            {/* disable button when there is no email or/and password */}
+                            <button className="btn btn-primary">SignUp</button> 
                             <Link to="/signin" className="link mt-3 text-center">Already have an account? Login</Link>
                         </div>
                     </div>

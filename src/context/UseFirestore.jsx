@@ -6,6 +6,8 @@ export default function UseFirestore(collectionName) {
     const [docs, setDocs] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
+    // define let unsubscribe in outer scope
+
     useEffect(() => {
         const getData = async () => {
             try {
@@ -28,6 +30,7 @@ export default function UseFirestore(collectionName) {
             }
         }
         getData();
+        // unsubscribe is undefined here
         return () => unsubscribe && unsubscribe()
     }, [collectionName])
 
